@@ -14,7 +14,7 @@
         <!--First Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstPageViewController" customModule="CollectionViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstPageViewController" customModule="UICollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
         <!--Collection View Controller-->
         <scene sceneID="TBK-l5-KLd">
             <objects>
-                <viewController storyboardIdentifier="CollectionViewID" id="7W2-LP-Wp8" customClass="CollectionViewController" customModule="CollectionViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionViewID" id="7W2-LP-Wp8" customClass="CollectionViewController" customModule="UICollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cHl-rG-yua">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCellID" reuseIdentifier="CollectionViewCellID" id="UqS-lN-dMl" customClass="CustomCollectionViewCell" customModule="CollectionViewSample" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCellID" reuseIdentifier="CollectionViewCellID" id="UqS-lN-dMl" customClass="CustomCollectionViewCell" customModule="UICollectionViewProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="532"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -97,6 +97,12 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kIW-Sb-M83">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="532"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-AV-2q7">
                                                     <rect key="frame" x="30" y="502" width="285" height="0.0"/>
@@ -104,15 +110,26 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-uI-or2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="532"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="kIW-Sb-M83" firstAttribute="height" secondItem="UqS-lN-dMl" secondAttribute="height" id="4TC-HP-Fsa"/>
+                                            <constraint firstItem="Dw0-uI-or2" firstAttribute="trailing" secondItem="kIW-Sb-M83" secondAttribute="trailing" id="4rH-R7-eWL"/>
+                                            <constraint firstItem="Dw0-uI-or2" firstAttribute="leading" secondItem="kIW-Sb-M83" secondAttribute="leading" id="4uc-Cu-0HY"/>
                                             <constraint firstItem="Ocq-AV-2q7" firstAttribute="bottom" secondItem="kIW-Sb-M83" secondAttribute="bottom" constant="-30" id="8jO-e1-wcH"/>
+                                            <constraint firstItem="Dw0-uI-or2" firstAttribute="top" secondItem="kIW-Sb-M83" secondAttribute="top" id="9dX-NA-Zsh"/>
                                             <constraint firstItem="Ocq-AV-2q7" firstAttribute="leading" secondItem="kIW-Sb-M83" secondAttribute="leading" constant="30" id="IKt-We-Jg1"/>
                                             <constraint firstItem="kIW-Sb-M83" firstAttribute="centerY" secondItem="UqS-lN-dMl" secondAttribute="centerY" id="Pwa-bc-XPj"/>
                                             <constraint firstItem="Ocq-AV-2q7" firstAttribute="centerX" secondItem="kIW-Sb-M83" secondAttribute="centerX" id="Qjk-4N-SXB"/>
+                                            <constraint firstItem="Dw0-uI-or2" firstAttribute="bottom" secondItem="kIW-Sb-M83" secondAttribute="bottom" id="Vqe-Wx-zZU"/>
                                             <constraint firstItem="kIW-Sb-M83" firstAttribute="width" secondItem="UqS-lN-dMl" secondAttribute="width" id="iLA-Ph-ejT"/>
                                             <constraint firstItem="kIW-Sb-M83" firstAttribute="centerX" secondItem="UqS-lN-dMl" secondAttribute="centerX" id="ld2-x8-I2j"/>
                                         </constraints>
@@ -151,7 +168,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="KcK-bp-gvb">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarID" id="Xus-BO-eJ6" customClass="TabBarViewController" customModule="CollectionViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarID" id="Xus-BO-eJ6" customClass="TabBarViewController" customModule="UICollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="gf0-4t-sAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

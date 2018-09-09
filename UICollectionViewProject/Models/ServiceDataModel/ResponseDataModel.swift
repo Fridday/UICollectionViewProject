@@ -18,30 +18,36 @@ struct ResponsesData: Codable {
     //Convert StringURLs to URLs
     var smallURLLink: URL? {
         
-        return URL(string: smallURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        guard let safeURLString = smallURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        
+        return URL(string: safeURLString)
     }
     
     var mediumURLLink: URL? {
         
-        return URL(string: mediumURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        guard let safeURLString = mediumURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        
+        return URL(string: safeURLString)
     }
     
     var originalURLLink: URL? {
         
-        return URL(string: originalURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        guard let safeURLString = originalURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        
+        return URL(string: safeURLString)
     }
 }
 
 
 /*
  
-Sample:
-
-{
-    "id": 1,
-    "smallURL": "https://prodfa.am.files.1drv.com/y4maqcYHZ_hdD4Cfystkt0HgLid35SHJN5F1_xpWmG1vVoB3vDV2kt6Q7mylZLDw74KIdBT9QWV7RQ7FoqmLEvORT5y-2lX45WH4GzJ00Eilw0TFEZWYCoIz65rxekeFBRXZNUZmBJS0twly-gBw3TNst0Ly3NSj6VM9P4GWEvQTbstmuK9HYqt93xQsqPKUvvGTcjkryMON9sPJY7Tm62iJg?width=256&height=144&cropmode=none",
-    "mediumURL": "https://prodfa.am.files.1drv.com/y4maqcYHZ_hdD4Cfystkt0HgLid35SHJN5F1_xpWmG1vVoB3vDV2kt6Q7mylZLDw74KIdBT9QWV7RQ7FoqmLEvORT5y-2lX45WH4GzJ00Eilw0TFEZWYCoIz65rxekeFBRXZNUZmBJS0twly-gBw3TNst0Ly3NSj6VM9P4GWEvQTbstmuK9HYqt93xQsqPKUvvGTcjkryMON9sPJY7Tm62iJg?width=1024&height=576&cropmode=none",
-    "originalURL": "https://prodfa.am.files.1drv.com/y4maqcYHZ_hdD4Cfystkt0HgLid35SHJN5F1_xpWmG1vVoB3vDV2kt6Q7mylZLDw74KIdBT9QWV7RQ7FoqmLEvORT5y-2lX45WH4GzJ00Eilw0TFEZWYCoIz65rxekeFBRXZNUZmBJS0twly-gBw3TNst0Ly3NSj6VM9P4GWEvQTbstmuK9HYqt93xQsqPKUvvGTcjkryMON9sPJY7Tm62iJg?width=3840&height=2160&cropmode=none"
-},
+ JSON Sample:
+ 
+ {
+ "id": 1,
+ "smallURL": "https://prodfa.am.files.1drv.com/y4maqcYHZ_hdD4Cfystkt0HgLid35SHJN5F1_xpWmG1vVoB3vDV2kt6Q7mylZLDw74KIdBT9QWV7RQ7FoqmLEvORT5y-2lX45WH4GzJ00Eilw0TFEZWYCoIz65rxekeFBRXZNUZmBJS0twly-gBw3TNst0Ly3NSj6VM9P4GWEvQTbstmuK9HYqt93xQsqPKUvvGTcjkryMON9sPJY7Tm62iJg?width=256&height=144&cropmode=none",
+ "mediumURL": "https://prodfa.am.files.1drv.com/y4maqcYHZ_hdD4Cfystkt0HgLid35SHJN5F1_xpWmG1vVoB3vDV2kt6Q7mylZLDw74KIdBT9QWV7RQ7FoqmLEvORT5y-2lX45WH4GzJ00Eilw0TFEZWYCoIz65rxekeFBRXZNUZmBJS0twly-gBw3TNst0Ly3NSj6VM9P4GWEvQTbstmuK9HYqt93xQsqPKUvvGTcjkryMON9sPJY7Tm62iJg?width=1024&height=576&cropmode=none",
+ "originalURL": "https://prodfa.am.files.1drv.com/y4maqcYHZ_hdD4Cfystkt0HgLid35SHJN5F1_xpWmG1vVoB3vDV2kt6Q7mylZLDw74KIdBT9QWV7RQ7FoqmLEvORT5y-2lX45WH4GzJ00Eilw0TFEZWYCoIz65rxekeFBRXZNUZmBJS0twly-gBw3TNst0Ly3NSj6VM9P4GWEvQTbstmuK9HYqt93xQsqPKUvvGTcjkryMON9sPJY7Tm62iJg?width=3840&height=2160&cropmode=none"
+ },
  
  */

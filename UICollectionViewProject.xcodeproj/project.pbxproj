@@ -166,8 +166,8 @@
 		7530DB802142DBE1006A7E85 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7530DB882142DC24006A7E85 /* ServiceHandler */,
 				7530DB832142DC0F006A7E85 /* ServiceDataModel */,
+				7530DB882142DC24006A7E85 /* ServiceHandler */,
 			);
 			path = Models;
 			sourceTree = "<group>";
