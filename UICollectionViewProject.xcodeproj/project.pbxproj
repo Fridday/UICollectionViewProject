@@ -24,6 +24,7 @@
 		7530DB962142DCF8006A7E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7530DB952142DCF8006A7E85 /* LaunchScreen.storyboard */; };
 		7530DB992142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530DB982142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift */; };
 		75FA6BC12144FD2600B49520 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA6BC02144FD2600B49520 /* JSONParser.swift */; };
+		75FA6BC3214552B800B49520 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA6BC2214552B800B49520 /* ImageViewController.swift */; };
 		ACC0C604E7704E7B5E5168AD /* Pods_UICollectionViewProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBEB9FD91226578F6C535B5 /* Pods_UICollectionViewProjectTests.framework */; };
 		CCB7AD8913E5F036927E8ECD /* Pods_UICollectionViewProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E811357F75D7C523C381A7B2 /* Pods_UICollectionViewProject.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		7530DB952142DCF8006A7E85 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7530DB982142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadImagesURL+UIImageView.swift"; sourceTree = "<group>"; };
 		75FA6BC02144FD2600B49520 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		75FA6BC2214552B800B49520 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7DBEB9FD91226578F6C535B5 /* Pods_UICollectionViewProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICollectionViewProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EABD072B2DFB6B8145980DC /* Pods-UICollectionViewProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICollectionViewProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-UICollectionViewProject/Pods-UICollectionViewProject.release.xcconfig"; sourceTree = "<group>"; };
 		D1A709A09812E643B73DD259 /* Pods-UICollectionViewProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICollectionViewProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UICollectionViewProjectUITests/Pods-UICollectionViewProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,9 +189,10 @@
 		7530DB7E2142DBBA006A7E85 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7530DB8D2142DC8F006A7E85 /* FirstPageViewController.swift */,
 				7530DB8C2142DC8F006A7E85 /* CollectionViewController.swift */,
 				7530DB8B2142DC8F006A7E85 /* CustomCollectionViewCell.swift */,
-				7530DB8D2142DC8F006A7E85 /* FirstPageViewController.swift */,
+				75FA6BC2214552B800B49520 /* ImageViewController.swift */,
 				7530DB8E2142DC90006A7E85 /* TabBarViewController.swift */,
 				7530DB502142DB0F006A7E85 /* AppDelegate.swift */,
 			);
@@ -460,6 +463,7 @@
 				75FA6BC12144FD2600B49520 /* JSONParser.swift in Sources */,
 				7530DB872142DC1E006A7E85 /* RequestDataModel.swift in Sources */,
 				7530DB512142DB0F006A7E85 /* AppDelegate.swift in Sources */,
+				75FA6BC3214552B800B49520 /* ImageViewController.swift in Sources */,
 				7530DB862142DC1E006A7E85 /* ResponseDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,9 @@
 import UIKit
 import SDWebImage
 
+var gSelectedIndexPath: Int?
+var gImageUrl: URL?
+
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: OUTLETs
@@ -27,6 +30,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
         self.collectionViewImages.delegate = self
         self.collectionViewImages.dataSource = self
         
@@ -38,7 +42,14 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     //MARK: DELEGATE METHODs
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
+        //collectionViewImages.deselectItem(at: indexPath, animated: true)
+        
+        gSelectedIndexPath = indexPath.row
+        gImageUrl = responseDataItem[indexPath.row].originalURLLink
+        
+        let nextPage = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewControllerID") as! ImageViewController
+        self.navigationController?.pushViewController(nextPage, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
