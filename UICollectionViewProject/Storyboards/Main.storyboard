@@ -75,11 +75,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wc-OM-oBA">
-                                <rect key="frame" x="0.0" y="50" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="563"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FfA-V6-QYV">
-                                <rect key="frame" x="15" y="65" width="345" height="553"/>
+                                <rect key="frame" x="10" y="65" width="355" height="553"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yii-PH-bOE">
                                     <size key="itemSize" width="345" height="532"/>
@@ -89,7 +89,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCellID" reuseIdentifier="CollectionViewCellID" id="UqS-lN-dMl" customClass="CustomCollectionViewCell" customModule="UICollectionViewProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="532"/>
+                                        <rect key="frame" x="5" y="0.0" width="345" height="532"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="532"/>
@@ -104,17 +104,23 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-AV-2q7">
-                                                    <rect key="frame" x="30" y="502" width="285" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-uI-or2">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-uI-or2" userLabel="Label Alpha">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="532"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-AV-2q7">
+                                                    <rect key="frame" x="30" y="502" width="285" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -145,10 +151,10 @@
                         <constraints>
                             <constraint firstItem="FfA-V6-QYV" firstAttribute="bottom" secondItem="DGT-Rp-Nzo" secondAttribute="bottom" id="8Jj-lZ-eig"/>
                             <constraint firstItem="7Wc-OM-oBA" firstAttribute="trailing" secondItem="DGT-Rp-Nzo" secondAttribute="trailing" id="Blx-Pt-cje"/>
-                            <constraint firstItem="7Wc-OM-oBA" firstAttribute="top" secondItem="DGT-Rp-Nzo" secondAttribute="top" constant="30" id="JdD-Hx-g0H"/>
-                            <constraint firstItem="FfA-V6-QYV" firstAttribute="leading" secondItem="DGT-Rp-Nzo" secondAttribute="leading" constant="15" id="TDG-Og-9VU"/>
+                            <constraint firstItem="7Wc-OM-oBA" firstAttribute="top" secondItem="DGT-Rp-Nzo" secondAttribute="top" constant="35" id="JdD-Hx-g0H"/>
+                            <constraint firstItem="FfA-V6-QYV" firstAttribute="leading" secondItem="DGT-Rp-Nzo" secondAttribute="leading" constant="10" id="TDG-Og-9VU"/>
                             <constraint firstItem="FfA-V6-QYV" firstAttribute="top" secondItem="DGT-Rp-Nzo" secondAttribute="top" constant="45" id="W7t-5U-wht"/>
-                            <constraint firstItem="FfA-V6-QYV" firstAttribute="trailing" secondItem="DGT-Rp-Nzo" secondAttribute="trailing" constant="-15" id="kaZ-7N-XGM"/>
+                            <constraint firstItem="FfA-V6-QYV" firstAttribute="trailing" secondItem="DGT-Rp-Nzo" secondAttribute="trailing" constant="-10" id="kaZ-7N-XGM"/>
                             <constraint firstItem="4G3-Xx-r4s" firstAttribute="top" secondItem="DGT-Rp-Nzo" secondAttribute="top" constant="10" id="q5M-4D-kGT"/>
                             <constraint firstItem="7Wc-OM-oBA" firstAttribute="bottom" secondItem="DGT-Rp-Nzo" secondAttribute="bottom" id="ro3-PY-2bV"/>
                             <constraint firstItem="7Wc-OM-oBA" firstAttribute="leading" secondItem="DGT-Rp-Nzo" secondAttribute="leading" id="vsl-Ux-mZT"/>

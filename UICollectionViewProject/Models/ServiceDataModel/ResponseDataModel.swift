@@ -15,24 +15,27 @@ struct ResponsesData: Codable {
     var mediumURL: String
     var originalURL: String
     
-    //Convert StringURLs to URLs
+    // Convert StringURLs to URLs
     var smallURLLink: URL? {
         
-        guard let safeURLString = smallURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
         
+        
+        guard let safeURLString = smallURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return nil }
+
         return URL(string: safeURLString)
+
     }
     
     var mediumURLLink: URL? {
         
-        guard let safeURLString = mediumURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        guard let safeURLString = mediumURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return nil }
         
         return URL(string: safeURLString)
     }
     
     var originalURLLink: URL? {
         
-        guard let safeURLString = originalURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        guard let safeURLString = originalURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return nil }
         
         return URL(string: safeURLString)
     }

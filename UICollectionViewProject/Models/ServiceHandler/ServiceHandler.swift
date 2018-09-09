@@ -33,45 +33,17 @@ class ServiceHandler {
                 completionHandler(nil, "Error!")
             }
             
-            guard let jsonData = data else {
+            guard let RespData = data else {
                 completionHandler(nil, "Data Error")
                 return
             }
             
-            do {
-                
-                let decoder = JSONDecoder()
-                let seriveData = try decoder.decode([ResponsesData].self, from: jsonData)
-                completionHandler(seriveData, nil)
-                
-            } catch {
-                
-                completionHandler(nil, "JSON Erorr")
-            }
+            //Parse json data:
+            let seriveData = JSONParser.parseData(RespData)
+            completionHandler(seriveData, nil)
         }
         
         dataTask.resume()
-    }
-    
-    
-    func loadImage(url: URL, completionHandler: @escaping ((UIImage?, String?) -> Void)) {
-        
-        let task = session.dataTask(with: url) { (imageData, response, error) in
-            
-            if error != nil {
-                completionHandler(nil, "Error!")
-            }
-            
-            guard let imageData = imageData else { return }
-            
-            let image = UIImage(data: imageData)
-            
-            DispatchQueue.main.async {
-                completionHandler(image, nil)
-            }
-            
-        }
-        task.resume()
     }
     
 }

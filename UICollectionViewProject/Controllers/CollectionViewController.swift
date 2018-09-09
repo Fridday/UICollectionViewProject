@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -41,30 +42,21 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return responseDataItem.count
+        return self.responseDataItem.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellID", for: indexPath) as! CustomCollectionViewCell
+        let cvCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellID", for: indexPath) as! CustomCollectionViewCell
         
-        collectionViewCell.lblCellCollectionView.text = "\(responseDataItem[indexPath.row].id)"
+        cvCell.lblCellCollectionView.text = "\(self.responseDataItem[indexPath.row].id)"
         
-        guard let url = responseDataItem[indexPath.row].smallURLLink else { return collectionViewCell }
+        cvCell.imgCellCollectionView.sd_setImage(with: self.responseDataItem[indexPath.row].smallURLLink, placeholderImage: #imageLiteral(resourceName: "TabBarHome"))
         
-        if let image = cache.object(forKey: url as NSURL) {
-            
-            DispatchQueue.main.async {
-                collectionViewCell.imgCellCollectionView.image = image
-            }
-        } else {
-            
-            collectionViewCell.imgCellCollectionView.loadFromURL(myUrl: url)
-        }
-        
-        return collectionViewCell
+        return cvCell
     }
     
+    // Collection View Layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let screenWidth = UIScreen.main.bounds.width
@@ -85,49 +77,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
             
             guard let responseData = response else { return }
             
-            self.responseDataItem = responseData
-            
-            self.reloadColectionView()
-            
+            DispatchQueue.main.async {
+                
+                self.responseDataItem = responseData
+                self.collectionViewImages.reloadData()
+            }
         }
     }
-    
-    // Reload collection view
-    private func reloadColectionView() {
-        
-        DispatchQueue.main.async {
-            self.collectionViewImages.reloadData()
-        }
-    }
-    
-    
-    /*
-     let imageSession = URLSession(configuration: .ephemeral)
-     let cache = NSCache<NSURL, UIImage>()
-     
-     func loadImage(from url: URL, completion: @escaping (UIImage) -> Void)
-     {
-     if let image = cache.object(forKey: url as NSURL)
-     {
-     completion(image)
-     }
-     else
-     {
-     let task = imageSession.dataTask(with: url) { (imageData, _, _) in
-     guard let imageData = imageData,
-     let image = UIImage(data: imageData)
-     else { return }
-     
-     self.cache.setObject(image, forKey: url as NSURL)
-     DispatchQueue.main.async {
-     completion(image)
-     }
-     
-     }
-     task.resume()
-     }
-     }
-     
-     */
     
 }
