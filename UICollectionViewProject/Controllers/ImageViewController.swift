@@ -30,6 +30,7 @@ class ImageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.imgWallpaper.sd_setImage(with: gImageUrl, placeholderImage: nil)
+        self.imgWallpaper.sd_setImage(with: SelectedImage.shared.originalURL, placeholderImage: nil)
     }
+
 }

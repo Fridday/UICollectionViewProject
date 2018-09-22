@@ -9,9 +9,6 @@
 import UIKit
 import SDWebImage
 
-var gSelectedIndexPath: Int?
-var gImageUrl: URL?
-
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: OUTLETs
@@ -35,7 +32,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         self.collectionViewImages.dataSource = self
         
         //collectionViewImages.semanticContentAttribute = UISemanticContentAttribute.forceRightToLeft
-        
     }
     
     
@@ -43,13 +39,25 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //collectionViewImages.deselectItem(at: indexPath, animated: true)
+        collectionViewImages.deselectItem(at: indexPath, animated: true)
         
-        gSelectedIndexPath = indexPath.row
-        gImageUrl = responseDataItem[indexPath.row].originalURLLink
-        
-        let nextPage = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewControllerID") as! ImageViewController
-        self.navigationController?.pushViewController(nextPage, animated: true)
+        if ConnectionHelper.checkInternet() {
+            
+            SelectedImage.shared.originalURL = responseDataItem[indexPath.row].originalURLLink
+            
+            let nextPage = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewControllerID") as! ImageViewController
+            self.navigationController?.pushViewController(nextPage, animated: true)
+            
+        } else {
+            
+            //Alert:: No Internet
+            let alert = UIAlertController.init(title: "error", message: "you don't have internet connection", preferredStyle: .alert)
+            let action = UIAlertAction.init(title: "OK", style: .default) { (myAction) in
+                exit(0)
+            }
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

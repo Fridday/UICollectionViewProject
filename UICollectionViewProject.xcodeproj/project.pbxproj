@@ -23,6 +23,8 @@
 		7530DB942142DCE6006A7E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7530DB932142DCE6006A7E85 /* Main.storyboard */; };
 		7530DB962142DCF8006A7E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7530DB952142DCF8006A7E85 /* LaunchScreen.storyboard */; };
 		7530DB992142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530DB982142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift */; };
+		756CED9E215651C8004BDE97 /* SelectedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CED9D215651C8004BDE97 /* SelectedImage.swift */; };
+		756CEDA0215652D1004BDE97 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CED9F215652D1004BDE97 /* ConnectionHelper.swift */; };
 		75FA6BC12144FD2600B49520 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA6BC02144FD2600B49520 /* JSONParser.swift */; };
 		75FA6BC3214552B800B49520 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA6BC2214552B800B49520 /* ImageViewController.swift */; };
 		ACC0C604E7704E7B5E5168AD /* Pods_UICollectionViewProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBEB9FD91226578F6C535B5 /* Pods_UICollectionViewProjectTests.framework */; };
@@ -71,6 +73,8 @@
 		7530DB932142DCE6006A7E85 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7530DB952142DCF8006A7E85 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7530DB982142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadImagesURL+UIImageView.swift"; sourceTree = "<group>"; };
+		756CED9D215651C8004BDE97 /* SelectedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImage.swift; sourceTree = "<group>"; };
+		756CED9F215652D1004BDE97 /* ConnectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
 		75FA6BC02144FD2600B49520 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		75FA6BC2214552B800B49520 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7DBEB9FD91226578F6C535B5 /* Pods_UICollectionViewProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICollectionViewProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +195,8 @@
 			children = (
 				7530DB8D2142DC8F006A7E85 /* FirstPageViewController.swift */,
 				7530DB8C2142DC8F006A7E85 /* CollectionViewController.swift */,
-				7530DB8B2142DC8F006A7E85 /* CustomCollectionViewCell.swift */,
 				75FA6BC2214552B800B49520 /* ImageViewController.swift */,
+				7530DB8B2142DC8F006A7E85 /* CustomCollectionViewCell.swift */,
 				7530DB8E2142DC90006A7E85 /* TabBarViewController.swift */,
 				7530DB502142DB0F006A7E85 /* AppDelegate.swift */,
 			);
@@ -213,6 +217,8 @@
 			children = (
 				7530DB832142DC0F006A7E85 /* ServiceDataModel */,
 				7530DB882142DC24006A7E85 /* ServiceHandler */,
+				756CED9D215651C8004BDE97 /* SelectedImage.swift */,
+				756CED9F215652D1004BDE97 /* ConnectionHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,13 +321,16 @@
 				TargetAttributes = {
 					7530DB4C2142DB0F006A7E85 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					7530DB602142DB0F006A7E85 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 7530DB4C2142DB0F006A7E85;
 					};
 					7530DB6B2142DB0F006A7E85 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 7530DB4C2142DB0F006A7E85;
 					};
 				};
@@ -400,10 +409,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UICollectionViewProject/Pods-UICollectionViewProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +466,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7530DB922142DC90006A7E85 /* TabBarViewController.swift in Sources */,
+				756CEDA0215652D1004BDE97 /* ConnectionHelper.swift in Sources */,
 				7530DB992142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift in Sources */,
+				756CED9E215651C8004BDE97 /* SelectedImage.swift in Sources */,
 				7530DB902142DC90006A7E85 /* CollectionViewController.swift in Sources */,
 				7530DB8A2142DC34006A7E85 /* ServiceHandler.swift in Sources */,
 				7530DB8F2142DC90006A7E85 /* CustomCollectionViewCell.swift in Sources */,
@@ -628,7 +641,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMON.UICollectionViewProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -647,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMON.UICollectionViewProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -668,7 +681,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMON.UICollectionViewProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICollectionViewProject.app/UICollectionViewProject";
 			};
@@ -690,7 +703,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMON.UICollectionViewProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICollectionViewProject.app/UICollectionViewProject";
 			};
@@ -711,7 +724,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMON.UICollectionViewProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UICollectionViewProject;
 			};
@@ -732,7 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMON.UICollectionViewProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UICollectionViewProject;
 			};
