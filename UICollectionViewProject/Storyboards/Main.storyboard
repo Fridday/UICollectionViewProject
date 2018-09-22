@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iMJ-Uw-N3Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iMJ-Uw-N3Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UICollectionView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuc-hy-wfF">
-                                <rect key="frame" x="55.5" y="338.5" width="265" height="30"/>
+                                <rect key="frame" x="55" y="338.5" width="265" height="30"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Bro-cz-pKX">
-                                <rect key="frame" x="168" y="278.5" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="278.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bro-cz-pKX" secondAttribute="height" multiplier="2:2" id="62I-T2-geE"/>
                                     <constraint firstAttribute="width" constant="40" id="hJq-Bx-iXp"/>
@@ -182,12 +181,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdr-Og-y4g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcf-0y-3HH">
+                                <rect key="frame" x="174.5" y="624.5" width="26" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26.25" id="fxY-Fs-2TI"/>
+                                    <constraint firstAttribute="height" constant="22.5" id="qft-Zj-uMI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="download"/>
+                                <connections>
+                                    <action selector="tnDownloadImageClicked:" destination="L69-cX-3oR" eventType="touchUpInside" id="Rjl-sx-ZEf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hyH-3u-dAz" firstAttribute="bottom" secondItem="Qcf-0y-3HH" secondAttribute="bottom" constant="20" id="06s-SM-KJW"/>
                             <constraint firstItem="zdr-Og-y4g" firstAttribute="top" secondItem="o4i-Lh-Abv" secondAttribute="top" id="IW4-SX-bV3"/>
                             <constraint firstItem="zdr-Og-y4g" firstAttribute="trailing" secondItem="hyH-3u-dAz" secondAttribute="trailing" id="acu-Bs-WPn"/>
                             <constraint firstItem="zdr-Og-y4g" firstAttribute="bottom" secondItem="hyH-3u-dAz" secondAttribute="bottom" id="cWd-ka-65K"/>
+                            <constraint firstItem="Qcf-0y-3HH" firstAttribute="centerX" secondItem="o4i-Lh-Abv" secondAttribute="centerX" id="rVz-AI-Tt1"/>
                             <constraint firstItem="zdr-Og-y4g" firstAttribute="leading" secondItem="hyH-3u-dAz" secondAttribute="leading" id="xWR-hL-5M2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hyH-3u-dAz"/>
@@ -262,5 +274,6 @@
         <image name="Circle" width="85" height="85"/>
         <image name="TabBarHome" width="25" height="25"/>
         <image name="bgFirstPage" width="655" height="782"/>
+        <image name="download" width="70" height="60"/>
     </resources>
 </document>

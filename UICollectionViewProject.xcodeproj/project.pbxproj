@@ -23,6 +23,7 @@
 		7530DB942142DCE6006A7E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7530DB932142DCE6006A7E85 /* Main.storyboard */; };
 		7530DB962142DCF8006A7E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7530DB952142DCF8006A7E85 /* LaunchScreen.storyboard */; };
 		7530DB992142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530DB982142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift */; };
+		7555926821569C7600C06A38 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555926721569C7600C06A38 /* PhotoManager.swift */; };
 		756CED9E215651C8004BDE97 /* SelectedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CED9D215651C8004BDE97 /* SelectedImage.swift */; };
 		756CEDA0215652D1004BDE97 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CED9F215652D1004BDE97 /* ConnectionHelper.swift */; };
 		75FA6BC12144FD2600B49520 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA6BC02144FD2600B49520 /* JSONParser.swift */; };
@@ -73,6 +74,7 @@
 		7530DB932142DCE6006A7E85 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7530DB952142DCF8006A7E85 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7530DB982142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadImagesURL+UIImageView.swift"; sourceTree = "<group>"; };
+		7555926721569C7600C06A38 /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		756CED9D215651C8004BDE97 /* SelectedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImage.swift; sourceTree = "<group>"; };
 		756CED9F215652D1004BDE97 /* ConnectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
 		75FA6BC02144FD2600B49520 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				7530DB882142DC24006A7E85 /* ServiceHandler */,
 				756CED9D215651C8004BDE97 /* SelectedImage.swift */,
 				756CED9F215652D1004BDE97 /* ConnectionHelper.swift */,
+				7555926721569C7600C06A38 /* PhotoManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			files = (
 				7530DB922142DC90006A7E85 /* TabBarViewController.swift in Sources */,
 				756CEDA0215652D1004BDE97 /* ConnectionHelper.swift in Sources */,
+				7555926821569C7600C06A38 /* PhotoManager.swift in Sources */,
 				7530DB992142DDA5006A7E85 /* LoadImagesURL+UIImageView.swift in Sources */,
 				756CED9E215651C8004BDE97 /* SelectedImage.swift in Sources */,
 				7530DB902142DC90006A7E85 /* CollectionViewController.swift in Sources */,

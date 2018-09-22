@@ -32,5 +32,15 @@ class ImageViewController: UIViewController {
         
         self.imgWallpaper.sd_setImage(with: SelectedImage.shared.originalURL, placeholderImage: nil)
     }
-
+    
+    
+    @IBAction func tnDownloadImageClicked(_ sender: UIButton) {
+        
+        PhotoManager.shared.createAlbum()
+        
+        if PhotoManager.shared.checkPermision() == .authorized {
+                        PhotoManager.shared.save(image: self.imgWallpaper.image!)
+        }
+    }
+    
 }
