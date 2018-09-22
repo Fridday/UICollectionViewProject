@@ -34,12 +34,18 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         //collectionViewImages.semanticContentAttribute = UISemanticContentAttribute.forceRightToLeft
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     
     //MARK: DELEGATE METHODs
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        collectionViewImages.deselectItem(at: indexPath, animated: true)
+        //collectionViewImages.deselectItem(at: indexPath, animated: true)
         
         if ConnectionHelper.checkInternet() {
             

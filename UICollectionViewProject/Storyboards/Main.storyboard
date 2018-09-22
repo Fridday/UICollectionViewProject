@@ -63,7 +63,7 @@
         <scene sceneID="TBK-l5-KLd">
             <objects>
                 <viewController storyboardIdentifier="CollectionViewID" id="7W2-LP-Wp8" customClass="CollectionViewController" customModule="UICollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cHl-rG-yua">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cHl-rG-yua">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zf7-ir-Ecj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2626" y="36"/>
+            <point key="canvasLocation" x="2554" y="-282"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="CEn-hD-mRr">
@@ -189,7 +189,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="download"/>
                                 <connections>
-                                    <action selector="tnDownloadImageClicked:" destination="L69-cX-3oR" eventType="touchUpInside" id="Rjl-sx-ZEf"/>
+                                    <action selector="tnDownloadImageClicked:" destination="L69-cX-3oR" eventType="touchUpInside" id="BCy-BU-3oC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -210,19 +210,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMx-wu-arC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3338" y="36"/>
+            <point key="canvasLocation" x="3186" y="-282"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="KcK-bp-gvb">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarID" id="Xus-BO-eJ6" customClass="TabBarViewController" customModule="UICollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="gf0-4t-sAq">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" shadowImage="Circle" itemPositioning="centered" id="gf0-4t-sAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.96862745100000003" green="0.33333333329999998" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.96862745100000003" green="0.33333333329999998" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="HH2-Bm-cWQ" kind="relationship" relationship="viewControllers" id="ipR-w8-iuK"/>
+                        <segue destination="hzA-gI-sMZ" kind="relationship" relationship="viewControllers" id="627-xU-YjO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOX-0S-m1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,7 +270,49 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wo-dk-obV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.8" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1870" y="-282"/>
+        </scene>
+        <!--Upload Image View Controller-->
+        <scene sceneID="fDZ-L5-ryx">
+            <objects>
+                <viewController id="hzA-gI-sMZ" customClass="UploadImageViewController" customModule="UICollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TBR-Lq-qk9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yev-Pw-WM8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ux-LE-4Kc">
+                                <rect key="frame" x="174.5" y="575.5" width="26" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26.25" id="0jy-NW-lb8"/>
+                                    <constraint firstAttribute="height" constant="22.5" id="Tcz-I6-jCu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="nO8-0l-a5d"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22.5" id="whq-dC-diI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="download"/>
+                                <connections>
+                                    <action selector="btnSetProfileImageClickedFromGallery:" destination="hzA-gI-sMZ" eventType="touchUpInside" id="c6A-IJ-Npd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Ux-LE-4Kc" firstAttribute="centerX" secondItem="TBR-Lq-qk9" secondAttribute="centerX" id="Bee-aZ-rzO"/>
+                            <constraint firstItem="3Fe-Ug-Joi" firstAttribute="bottom" secondItem="6Ux-LE-4Kc" secondAttribute="bottom" constant="20" id="ZYK-xU-niG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Fe-Ug-Joi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="TabBarHome" id="C0Y-T6-m4J"/>
+                    <connections>
+                        <outlet property="imgView" destination="Yev-Pw-WM8" id="bAw-OK-7p9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Cr-jH-iHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2552.8000000000002" y="406.14692653673166"/>
         </scene>
     </scenes>
     <resources>
